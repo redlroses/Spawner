@@ -12,7 +12,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7cbf77d0-15af-4a22-8c3d-765a4dad8687" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/.gitattributes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ArtifactDB" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ArtifactDB" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/Artifacts/00/00083b8e067021deb7d3bfeeac54d5c7" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/Artifacts/00/0028d835ab121d8831964504595c3a77" beforeDir="false" />
@@ -2175,7 +2174,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1656486195847</updated>
-      <workItem from="1656486202472" duration="713000" />
+      <workItem from="1656486202472" duration="1295000" />
     </task>
     <servers />
   </component>
