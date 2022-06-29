@@ -17,7 +17,7 @@ public class ObjectSpawner : MonoBehaviour
     private Coroutine _spawnObjects = default;
     private float _spawnRateCashe = default;
 
-    private bool IsActive => !(_spawnObjects is null); 
+    private bool IsInactive => !(_spawnObjects is null); 
 
     private void Awake()
     {
@@ -48,7 +48,7 @@ public class ObjectSpawner : MonoBehaviour
 
     private void StopSpawning()
     {
-        if (IsActive) return;
+        if (IsInactive) return;
         
         StopCoroutine(_spawnObjects);
         _isSpawning = false;
@@ -57,14 +57,14 @@ public class ObjectSpawner : MonoBehaviour
 
     private void Pause()
     {
-        if (IsActive) return;
+        if (IsInactive) return;
         
         _isSpawning = false;
     }
 
     private void Resume()
     {
-        if (IsActive) return;
+        if (IsInactive) return;
 
         _isSpawning = true;
     }
