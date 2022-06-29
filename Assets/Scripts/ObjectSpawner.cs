@@ -17,7 +17,7 @@ public class ObjectSpawner : MonoBehaviour
     private Coroutine _spawnObjects = default;
     private float _spawnRateCashe = default;
 
-    private bool IsInactive => !(_spawnObjects is null); 
+    private bool IsInactive => _spawnObjects is null; 
 
     private void Awake()
     {
