@@ -10,7 +10,6 @@ public class ObjectSpawner : MonoBehaviour
     [SerializeField] [Range(0.01f, 10f)] private float _spawnRate = 2f;
     
     private readonly List<Transform> _spawnPoints = new List<Transform>();
-    private readonly float _epsilon = 0.0001f;
     
     private WaitForSeconds _waitTime = default;
     private WaitUntil _waitIsSpawning = default;
@@ -34,7 +33,8 @@ public class ObjectSpawner : MonoBehaviour
 
     private void OnValidate()
     {
-        if (Mathf.Abs(_spawnRateCashe - _spawnRate) < _epsilon) return;
+        if (Mathf.Approximately(_spawnRateCashe, _spawnRate)) 
+            return;
         
         _spawnRateCashe = _spawnRate;
         _waitTime = new WaitForSeconds(_spawnRate);
@@ -48,7 +48,8 @@ public class ObjectSpawner : MonoBehaviour
 
     private void StopSpawning()
     {
-        if (IsInactive) return;
+        if (IsInactive) 
+            return;
         
         StopCoroutine(_spawnObjects);
         _isSpawning = false;
@@ -57,14 +58,16 @@ public class ObjectSpawner : MonoBehaviour
 
     private void Pause()
     {
-        if (IsInactive) return;
+        if (IsInactive) 
+            return;
         
         _isSpawning = false;
     }
 
     private void Resume()
     {
-        if (IsInactive) return;
+        if (IsInactive) 
+            return;
 
         _isSpawning = true;
     }
@@ -79,7 +82,8 @@ public class ObjectSpawner : MonoBehaviour
 
     private IEnumerator SpawnObject()
     {
-        if (_spawnPoints.Count == 0) throw new Exception("Не заданы точки спавна");
+        if (_spawnPoints.Count == 0) 
+            throw new Exception("Не заданы точки спавна");
         
         IEnumerator spawnPointsEnumerator = _spawnPoints.GetEnumerator();
         
@@ -93,7 +97,8 @@ public class ObjectSpawner : MonoBehaviour
                 
             Transform spawnPoint = (Transform) spawnPointsEnumerator.Current;
 
-            if (spawnPoint is null) throw new NullReferenceException();
+            if (spawnPoint is null) 
+                throw new NullReferenceException();
             
             Instantiate(_spawningObject, spawnPoint.position, Quaternion.identity);
             yield return _waitTime;
